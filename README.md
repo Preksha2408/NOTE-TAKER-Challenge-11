@@ -71,9 +71,9 @@ The Note Taker App is a simple and efficient tool for creating, viewing, and man
 
 ## Screenshots 
 
-* [First-page](./public/assets/images/First-page.png)
+* ![First-page](./public/assets/images/First-page.png)
 
-* [Note-taker](./public/assets/images/note-taker.png)
+* ![Note-taker](./public/assets/images/note-taker.png)
 
 
 ## Demo 

@@ -2,10 +2,10 @@ const express = require('express');
 const html_routes = require('./routes/htmlRoutes')
 const api_routes = require('./routes/apiRoutes')
 const PORT = process.env.PORT || 3001;
-// dynamically set the port
+// dynamically setting the port
 const app = express();
 
-// Express middleware will always run the operation in the order from top to bottom "order matters"
+// Express middleware always run's the operation in the order from top to bottom .
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));

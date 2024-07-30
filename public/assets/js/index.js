@@ -2,6 +2,7 @@ let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
+let clearFormBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
@@ -9,6 +10,7 @@ if (window.location.pathname === '/notes') {
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
+  clearFormBtn = document.querySelector('.clear-btn');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -173,9 +175,18 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+const handleClearForm = () => {
+  noteTitle.value = '';
+  noteText.value = '';
+  activeNote = {};
+  renderActiveNote();
+};
+
+
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
+  clearFormBtn.addEventListener('click', handleClearForm);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
